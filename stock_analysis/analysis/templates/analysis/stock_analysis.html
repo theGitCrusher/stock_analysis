@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis</title>
+</head>
+<body>
+    <h1>Stock Analysis</h1>
+
+    <h2>Top Performing Stocks This Quarter</h2>
+    <ul>
+        {% for stock in top_performing_stocks %}
+            <li>{{ stock.symbol }} - {{ stock.name }}: {{ stock.last_quarter_performance }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Growing Sectors</h2>
+    <ul>
+        {% for sector in growing_sectors %}
+            <li>{{ sector.sector }}: {{ sector.total_volume }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
